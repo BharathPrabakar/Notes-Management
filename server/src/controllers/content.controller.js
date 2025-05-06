@@ -3,8 +3,8 @@ const contentService = require('../services/content.service');
 exports.addNewContent = async function (req, res) {
     try {
         const payload = req.body;
-        const { text, isPrivate } = payload;
-        await contentService.addContent(text, isPrivate);
+        const { text, isPrivate, title } = payload;
+        await contentService.addContent(text, isPrivate, title);
         res.status(201).json({
             status: true,
             message: 'content added successfully',

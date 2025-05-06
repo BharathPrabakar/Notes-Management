@@ -21,7 +21,7 @@ const restrictAccess = function (req,res,next) {
     }
 }
 
-contentRouter.post('/',addNewContent);
+contentRouter.post('/add',addNewContent);
 contentRouter.get('/public',getPublicContents);
 contentRouter.get('/private',restrictAccess,getPrivateContents);
 

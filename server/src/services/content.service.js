@@ -1,12 +1,12 @@
 const ContentModel = require('../models/content.model');
 
 class ContentService {
-    async addContent(text, isPrivate=false) {
+    async addContent(text, title, isPrivate=false) {
         await ContentModel.create({
+            title,
             text,
             isPrivate
         });
-        M
     }
     async getPrivateContents() {
         const contents = await ContentModel.find({ isPrivate : true });
